@@ -10,6 +10,10 @@ app.use((_req, res, next) => {
   next();
 });
 
+app.get("/", (_req, res) => {
+  res.json({ status: "success", message: "MESH Gender API is running" });
+});
+
 app.use("/api", classifyRoute);
 
 app.use(errorHandler);
